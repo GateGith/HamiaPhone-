@@ -50,7 +50,6 @@
       gap:16px;
     }
 
-    .wrap,
     .topbar,
     header,
     .card,
@@ -298,6 +297,16 @@
       z-index:1;
     }
 
+    .address-link{
+      color:var(--white);
+      text-decoration:none;
+      display:block;
+    }
+
+    .address-link:hover{
+      color:#ffd6d6;
+    }
+
     .qr-wrap{
       width:100%;
       display:grid;
@@ -431,37 +440,37 @@
     </section>
 
     <section class="card" id="services">
-      <h2 class="section-title">Services</h2>
+      <h2 class="section-title">🔧 Services</h2>
       <p class="lead">Présentation simple, forte et facile à lire.</p>
 
       <div class="services">
         <div class="service">
           <h3>🔧 Réparation</h3>
           <ul>
-            >Changement d’écran</li>
-            >Changement de batterie</li>
-            >Diagnostic des pannes</li>
-            >Réparation rapide</li>
+            <li>Changement d’écran</li>
+            <li>Changement de batterie</li>
+            <li>Diagnostic des pannes</li>
+            <li>Réparation rapide</li>
           </ul>
         </div>
 
         <div class="service">
           <h3>🛡️ Accessoires</h3>
           <ul>
-            >Chargeurs et câbles</li>
-            >Coques et protections</li>
-            >Écouteurs</li>
-            >Produits variés</li>
+            <li>Chargeurs et câbles</li>
+            <li>Coques et protections</li>
+            <li>Écouteurs</li>
+            <li>Produits variés</li>
           </ul>
         </div>
 
         <div class="service">
           <h3>📡 Présence sociale</h3>
           <ul>
-            >WhatsApp direct</li>
-            >Instagram officiel</li>
-            >Facebook officiel</li>
-            >QR code visible</li>
+            <li>WhatsApp direct</li>
+            <li>Instagram officiel</li>
+            <li>Facebook officiel</li>
+            <li>QR code visible</li>
           </ul>
         </div>
       </div>
@@ -470,14 +479,20 @@
     <section class="card" id="adresses">
       <h2 class="section-title">📍 Adresses</h2>
       <div class="grid2">
-        <div class="box">
-          <h3>🏪 Adresse 1</h3>
-          <p>116 avenue des Freres Abdeslam Kouba Alger</p>
-        </div>
-        <div class="box">
-          <h3>🏪 Adresse 2</h3>
-          <p>01 Rue Nacer Agoulmine Kouba Alger</p>
-        </div>
+        <a class="address-link" href="https://www.google.com/maps/search/?api=1&query=116+avenue+des+Freres+Abdeslam+Kouba+Alger+P3HG%2BRF+Kouba" target="_blank" rel="noopener noreferrer">
+          <div class="box">
+            <h3>🏪 Adresse 1</h3>
+            <p>116 avenue des Freres Abdeslam Kouba Alger</p>
+            <p><strong>P3HG+RF Kouba</strong></p>
+          </div>
+        </a>
+
+        <a class="address-link" href="https://www.google.com/maps/search/?api=1&query=01+Rue+Nacer+Agoulmine+Kouba+Alger" target="_blank" rel="noopener noreferrer">
+          <div class="box">
+            <h3>🏪 Adresse 2</h3>
+            <p>01 Rue Nacer Agoulmine Kouba Alger</p>
+          </div>
+        </a>
       </div>
     </section>
 
