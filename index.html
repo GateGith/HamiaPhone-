@@ -7,15 +7,19 @@
   <meta name="description" content="Hamiaphone - Réparation de téléphones et vente d'accessoires à Kouba Alger." />
   <style>
     :root{
-      --black:#0b0b0b;
-      --dark:#151515;
-      --gray:#8a8a8a;
+      --bg1:#070707;
+      --bg2:#121212;
+      --card:rgba(255,255,255,.06);
+      --card2:rgba(255,255,255,.04);
+      --line:rgba(255,255,255,.10);
       --white:#ffffff;
+      --gray:#a3a3a3;
+      --dark:#151515;
       --red:#e10600;
       --red2:#b80000;
-      --line:rgba(255,255,255,.08);
-      --shadow:0 18px 50px rgba(0,0,0,.38);
-      --radius:22px;
+      --shadow:0 25px 70px rgba(0,0,0,.55);
+      --shadow2:0 12px 30px rgba(225,6,0,.20);
+      --radius:28px;
     }
 
     *{box-sizing:border-box;}
@@ -23,86 +27,94 @@
     body{
       margin:0;
       font-family:Arial, Helvetica, sans-serif;
-      background:
-        radial-gradient(circle at top, rgba(225,6,0,.08), transparent 30%),
-        linear-gradient(180deg, var(--black) 0%, #101010 100%);
       color:var(--white);
-      line-height:1.6;
+      background:
+        radial-gradient(circle at 20% 20%, rgba(225,6,0,.18), transparent 18%),
+        radial-gradient(circle at 80% 15%, rgba(255,255,255,.08), transparent 14%),
+        radial-gradient(circle at 50% 80%, rgba(255,255,255,.06), transparent 18%),
+        linear-gradient(180deg, var(--bg1), var(--bg2));
       display:flex;
       justify-content:center;
       text-align:center;
+      min-height:100vh;
+      overflow-x:hidden;
     }
 
     .page{
       width:100%;
-      max-width:1200px;
-      min-height:100vh;
-      padding:16px;
+      max-width:1240px;
+      padding:18px;
       display:flex;
       flex-direction:column;
       align-items:center;
-      justify-content:center;
-      gap:14px;
+      gap:16px;
     }
 
-    .topbar, header, .card, footer{
+    .wrap,
+    .topbar,
+    header,
+    .card,
+    footer{
       width:100%;
-      max-width:1020px;
+      max-width:1040px;
     }
 
     .topbar{
       background:rgba(255,255,255,.04);
+      backdrop-filter:blur(14px);
+      -webkit-backdrop-filter:blur(14px);
       border:1px solid var(--line);
       border-radius:999px;
       padding:10px 16px;
-      color:var(--gray);
       display:flex;
       flex-wrap:wrap;
       justify-content:center;
-      gap:10px 16px;
+      gap:10px 14px;
+      color:var(--gray);
+      box-shadow:var(--shadow);
     }
 
     .pill{
-      padding:7px 12px;
-      border-radius:999px;
-      border:1px solid var(--line);
-      background:rgba(255,255,255,.04);
       display:inline-flex;
       align-items:center;
-      justify-content:center;
       gap:8px;
+      padding:8px 13px;
+      border-radius:999px;
+      background:rgba(255,255,255,.05);
+      border:1px solid var(--line);
     }
 
     header{
-      background:rgba(21,21,21,.96);
+      background:linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.03));
       border:1px solid var(--line);
-      border-radius:24px;
-      padding:18px;
+      border-radius:32px;
       box-shadow:var(--shadow);
+      backdrop-filter:blur(16px);
+      -webkit-backdrop-filter:blur(16px);
+      padding:22px;
       display:flex;
       flex-direction:column;
       align-items:center;
-      justify-content:center;
-      gap:14px;
+      gap:16px;
+      transform-style:preserve-3d;
+      perspective:1000px;
     }
 
     .brand{
       display:flex;
       flex-direction:column;
       align-items:center;
-      gap:10px;
+      gap:12px;
     }
 
     .logo{
-      width:76px;
-      height:76px;
-      border-radius:20px;
-      background:linear-gradient(135deg, var(--red), var(--red2));
-      display:grid;
-      place-items:center;
+      width:84px;
+      height:84px;
+      border-radius:24px;
       overflow:hidden;
-      border:1px solid rgba(255,255,255,.08);
-      box-shadow:0 10px 30px rgba(225,6,0,.28);
+      background:linear-gradient(135deg, var(--red), var(--red2));
+      box-shadow:var(--shadow2);
+      border:1px solid rgba(255,255,255,.12);
     }
 
     .logo img{
@@ -114,7 +126,8 @@
 
     h1{
       margin:0;
-      font-size:28px;
+      font-size:30px;
+      letter-spacing:.3px;
     }
 
     .sub{
@@ -130,78 +143,107 @@
       gap:10px;
     }
 
-    .menu a, .btn, .social{
+    .menu a,
+    .btn,
+    .social{
       text-decoration:none;
       color:var(--white);
-      border-radius:14px;
+      border-radius:16px;
       padding:12px 16px;
       border:1px solid var(--line);
-      background:rgba(255,255,255,.04);
+      background:rgba(255,255,255,.05);
       font-weight:700;
-      min-height:46px;
+      min-height:48px;
       display:inline-flex;
       align-items:center;
       justify-content:center;
-      transition:.2s ease;
+      transition:.22s ease;
+      box-shadow:0 8px 20px rgba(0,0,0,.20);
     }
 
-    .menu a:hover, .btn:hover, .social:hover{
-      transform:translateY(-1px);
+    .menu a:hover,
+    .btn:hover,
+    .social:hover{
+      transform:translateY(-2px) scale(1.01);
+      box-shadow:0 12px 28px rgba(0,0,0,.30);
     }
 
-    .btn-primary, .whatsapp{
+    .btn-primary,
+    .whatsapp{
       background:linear-gradient(135deg, var(--red), var(--red2));
       border-color:transparent;
+      box-shadow:0 10px 30px rgba(225,6,0,.22);
     }
 
     .instagram{
-      background:var(--dark);
+      background:rgba(255,255,255,.06);
     }
 
     .facebook{
-      background:var(--gray);
-      color:var(--black);
-      border-color:transparent;
+      background:rgba(255,255,255,.10);
     }
 
     .card{
-      background:rgba(255,255,255,.03);
+      background:linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.03));
+      backdrop-filter:blur(14px);
+      -webkit-backdrop-filter:blur(14px);
       border:1px solid var(--line);
       border-radius:var(--radius);
       box-shadow:var(--shadow);
-      padding:24px;
+      padding:26px;
       display:flex;
       flex-direction:column;
       align-items:center;
-      justify-content:center;
       gap:18px;
+      position:relative;
+      overflow:hidden;
+      transform:translateZ(0);
+    }
+
+    .card::before{
+      content:"";
+      position:absolute;
+      inset:-2px;
+      background:linear-gradient(135deg, rgba(225,6,0,.12), transparent 25%, transparent 75%, rgba(255,255,255,.06));
+      pointer-events:none;
     }
 
     .hero h2{
       margin:0;
-      font-size:clamp(30px, 4vw, 48px);
-      line-height:1.08;
+      font-size:clamp(30px, 4vw, 52px);
+      line-height:1.05;
+      position:relative;
+      z-index:1;
     }
 
     .hero h2 span{color:#ffb3b3;}
 
-    .hero p, .lead, .note{
+    .hero p,
+    .lead,
+    .note{
       margin:0;
       color:var(--gray);
       max-width:72ch;
+      position:relative;
+      z-index:1;
     }
 
-    .cta, .links{
+    .cta,
+    .links{
       width:100%;
       display:flex;
       flex-wrap:wrap;
       justify-content:center;
       gap:12px;
+      position:relative;
+      z-index:1;
     }
 
     .section-title{
       margin:0;
       font-size:28px;
+      position:relative;
+      z-index:1;
     }
 
     .services{
@@ -209,27 +251,33 @@
       display:grid;
       grid-template-columns:repeat(3, 1fr);
       gap:16px;
+      position:relative;
+      z-index:1;
     }
 
-    .service, .box{
-      background:rgba(255,255,255,.04);
+    .service,
+    .box{
+      background:linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.04));
       border:1px solid var(--line);
-      border-radius:18px;
+      border-radius:22px;
       padding:18px;
       display:flex;
       flex-direction:column;
       align-items:center;
       justify-content:center;
       text-align:center;
+      box-shadow:0 12px 28px rgba(0,0,0,.25);
+      min-height:190px;
     }
 
-    .service{
-      min-height:210px;
-    }
-
-    .service h3, .box h3{
+    .service h3,
+    .box h3{
       margin:0 0 10px;
       font-size:20px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
     }
 
     .service ul{
@@ -246,24 +294,28 @@
       display:grid;
       grid-template-columns:1fr 1fr;
       gap:16px;
+      position:relative;
+      z-index:1;
     }
 
     .qr-wrap{
       width:100%;
       display:grid;
-      grid-template-columns:1fr 320px;
+      grid-template-columns:1fr 340px;
       gap:18px;
       align-items:center;
+      position:relative;
+      z-index:1;
     }
 
     .photo-box{
       width:100%;
-      max-width:320px;
+      max-width:340px;
       margin:0 auto;
-      border-radius:20px;
+      border-radius:24px;
       overflow:hidden;
       border:1px solid var(--line);
-      background:var(--dark);
+      background:rgba(255,255,255,.05);
       box-shadow:var(--shadow);
     }
 
@@ -281,39 +333,43 @@
     }
 
     .qrframe{
-      background:var(--white);
-      border-radius:22px;
+      background:rgba(255,255,255,.95);
+      border-radius:26px;
       padding:14px;
       text-align:center;
       display:flex;
       flex-direction:column;
       align-items:center;
       justify-content:center;
+      box-shadow:var(--shadow);
     }
 
     .qrframe img{
       width:100%;
-      max-width:290px;
+      max-width:300px;
       height:auto;
       display:block;
-      border-radius:16px;
+      border-radius:18px;
       object-fit:cover;
     }
 
     .caption{
       margin-top:10px;
-      color:var(--black);
+      color:#0b0b0b;
       font-weight:800;
     }
 
     footer{
       color:var(--gray);
-      padding:10px 0 4px;
+      padding:8px 0 4px;
     }
 
     @media (max-width: 900px){
-      .services, .grid2, .qr-wrap{grid-template-columns:1fr;}
-      .page{justify-content:flex-start;}
+      .services,
+      .grid2,
+      .qr-wrap{
+        grid-template-columns:1fr;
+      }
     }
 
     @media (max-width: 520px){
@@ -321,9 +377,14 @@
       h1{font-size:24px;}
       .section-title{font-size:24px;}
       .hero h2{font-size:28px;}
-      .btn, .social, .menu a{width:100%;}
-      .cta, .links, .menu{display:grid;}
+      .btn,
+      .social,
+      .menu a{width:100%;}
+      .cta,
+      .links,
+      .menu{display:grid;}
       .photo-box img{height:220px;}
+      .qrframe img{max-width:100%;}
     }
   </style>
 </head>
@@ -334,7 +395,7 @@
       <span class="pill">📍 Kouba, Alger</span>
       <span class="pill">☎ 0792 197 104</span>
       <span class="pill">💬 0551 025 000</span>
-      <span class="pill">Instagram: @HAMIAPHONE_</span>
+      <span class="pill">📷 @HAMIAPHONE_</span>
     </div>
 
     <header>
@@ -359,7 +420,7 @@
     <section class="card hero">
       <h2>Réparation de téléphones et vente d’<span>accessoires</span>.</h2>
       <p>
-        Un site premium, simple et centré, conçu pour être beau sur téléphone et ordinateur, avec accès rapide au contact et au compte Instagram.
+        Une interface premium, moderne et élégante, pensée pour donner une impression forte dès la première seconde.
       </p>
 
       <div class="cta">
@@ -371,68 +432,68 @@
 
     <section class="card" id="services">
       <h2 class="section-title">Services</h2>
-      <p class="lead">Présentation claire et professionnelle.</p>
+      <p class="lead">Présentation simple, forte et facile à lire.</p>
 
       <div class="services">
         <div class="service">
-          <h3>Réparation</h3>
+          <h3>🔧 Réparation</h3>
           <ul>
-            <li>Changement d’écran</li>
-            <li>Changement de batterie</li>
-            <li>Diagnostic des pannes</li>
-            <li>Réparation rapide</li>
+            >Changement d’écran</li>
+            >Changement de batterie</li>
+            >Diagnostic des pannes</li>
+            >Réparation rapide</li>
           </ul>
         </div>
 
         <div class="service">
-          <h3>Accessoires</h3>
+          <h3>🛡️ Accessoires</h3>
           <ul>
-            <li>Chargeurs et câbles</li>
-            <li>Coques et protections</li>
-            <li>Écouteurs</li>
-            <li>Produits variés</li>
+            >Chargeurs et câbles</li>
+            >Coques et protections</li>
+            >Écouteurs</li>
+            >Produits variés</li>
           </ul>
         </div>
 
         <div class="service">
-          <h3>Présence sociale</h3>
+          <h3>📡 Présence sociale</h3>
           <ul>
-            <li>WhatsApp direct</li>
-            <li>Instagram officiel</li>
-            <li>Facebook officiel</li>
-            <li>QR code visible</li>
+            >WhatsApp direct</li>
+            >Instagram officiel</li>
+            >Facebook officiel</li>
+            >QR code visible</li>
           </ul>
         </div>
       </div>
     </section>
 
     <section class="card" id="adresses">
-      <h2 class="section-title">Adresses</h2>
+      <h2 class="section-title">📍 Adresses</h2>
       <div class="grid2">
         <div class="box">
-          <h3>Adresse 1</h3>
+          <h3>🏪 Adresse 1</h3>
           <p>116 avenue des Freres Abdeslam Kouba Alger</p>
         </div>
         <div class="box">
-          <h3>Adresse 2</h3>
+          <h3>🏪 Adresse 2</h3>
           <p>01 Rue Nacer Agoulmine Kouba Alger</p>
         </div>
       </div>
     </section>
 
     <section class="card" id="contact">
-      <h2 class="section-title">Contact</h2>
-      <p class="lead">Tout est centré, lisible et facile à toucher sur mobile.</p>
+      <h2 class="section-title">☎ Contact</h2>
+      <p class="lead">Boutons larges, lisibles et faciles à toucher sur mobile.</p>
 
       <div class="links">
-        <a class="social whatsapp" href="https://wa.me/213551025000" target="_blank" rel="noopener noreferrer">WhatsApp: 0551 025 000</a>
+        <a class="social whatsapp" href="https://wa.me/213551025000" target="_blank" rel="noopener noreferrer">WhatsApp</a>
         <a class="social instagram" href="https://instagram.com/hamiaphone_" target="_blank" rel="noopener noreferrer">Instagram</a>
         <a class="social facebook" href="https://facebook.com/phone.hamia/" target="_blank" rel="noopener noreferrer">Facebook</a>
       </div>
     </section>
 
     <section class="card">
-      <h2 class="section-title">Photo Facebook</h2>
+      <h2 class="section-title">🖼️ Photo Facebook</h2>
       <div class="photo-box">
         <img src="profile-facebook.jpg" alt="Photo de profil Facebook du magasin">
         <div class="caption">Photo du magasin</div>
@@ -440,10 +501,12 @@
     </section>
 
     <section class="card" id="qr">
-      <h2 class="section-title">QR Instagram</h2>
+      <h2 class="section-title">📷 QR Instagram</h2>
       <div class="qr-wrap">
         <div>
-          <p class="note">Le QR code affiche le compte <strong>@HAMIAPHONE_</strong>.</p>
+          <p class="note">
+            Le QR code affiche le compte <strong>@HAMIAPHONE_</strong>.
+          </p>
         </div>
 
         <div class="qrframe">
