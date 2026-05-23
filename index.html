@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hamiaphone | Réparation & Accessoires Téléphones - Kouba Alger</title>
+  <meta name="description" content="Hamiaphone - Réparation de téléphones et vente d'accessoires à Kouba Alger. Deux adresses, contact WhatsApp, Instagram et Facebook." />
+  <style>
+    :root{
+      --bg:#0f1115;
+      --card:#161b24;
+      --text:#f5f7fb;
+      --muted:#aab3c5;
+      --brand:#ff5a3d;
+      --brand2:#ff9b31;
+      --line:rgba(255,255,255,.08);
+      --radius:20px;
+      --shadow:0 16px 45px rgba(0,0,0,.35);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family: Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(255,90,61,.14), transparent 30%),
+        radial-gradient(circle at top right, rgba(255,155,49,.12), transparent 26%),
+        linear-gradient(180deg, #0b0d12 0%, #0f1115 100%);
+      color:var(--text);
+      line-height:1.6;
+    }
+    a{color:inherit; text-decoration:none}
+    .wrap{max-width:1100px; margin:0 auto; padding:0 18px}
+    .topbar{
+      background:rgba(255,255,255,.03);
+      border-bottom:1px solid var(--line);
+      color:var(--muted);
+      font-size:14px;
+    }
+    .topbar .wrap{
+      display:flex; flex-wrap:wrap; gap:10px 16px;
+      justify-content:center; align-items:center;
+      padding:10px 18px;
+    }
+    .pill{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:8px 12px;
+      border:1px solid var(--line);
+      border-radius:999px;
+      background:rgba(255,255,255,.04);
+    }
+    header{
+      position:sticky; top:0; z-index:20;
+      backdrop-filter:blur(12px);
+      background:rgba(10,12,18,.75);
+      border-bottom:1px solid var(--line);
+    }
+    .nav{
+      display:flex; justify-content:space-between; align-items:center; gap:16px;
+      padding:16px 0;
+      flex-wrap:wrap;
+    }
+    .brand{
+      display:flex; align-items:center; gap:12px;
+    }
+    .logo{
+      width:46px; height:46px; border-radius:14px;
+      background:linear-gradient(135deg, var(--brand), var(--brand2));
+      display:grid; place-items:center;
+      font-weight:800; color:#fff;
+      box-shadow:0 10px 28px rgba(255,90,61,.3);
+    }
+    .brand h1{margin:0; font-size:18px}
+    .brand p{margin:2px 0 0; color:var(--muted); font-size:13px}
+    .menu{
+      display:flex; flex-wrap:wrap; gap:10px;
+    }
+    .menu a{
+      padding:10px 14px;
+      border:1px solid var(--line);
+      border-radius:999px;
+      background:rgba(255,255,255,.03);
+      font-size:14px;
+    }
+    .hero{
+      padding:46px 0 24px;
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.2fr .8fr;
+      gap:20px;
+    }
+    .card{
+      background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.03));
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+    }
+    .hero-main{padding:28px}
+    .tag{
+      display:inline-block;
+      padding:8px 12px;
+      border-radius:999px;
+      background:rgba(255,90,61,.12);
+      border:1px solid rgba(255,90,61,.25);
+      color:#ffd6d0;
+      font-size:14px;
+      margin-bottom:18px;
+    }
+    h2{
+      margin:0 0 12px;
+      font-size:40px;
+      line-height:1.12;
+    }
+    h2 span{color:#ffb08f}
+    .hero-main p{
+      margin:0 0 20px;
+      color:var(--muted);
+      font-size:17px;
+      max-width:60ch;
+    }
+    .cta{
+      display:flex; flex-wrap:wrap; gap:12px;
+    }
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding:13px 18px;
+      border-radius:14px;
+      font-weight:700;
+      min-height:48px;
+      border:1px solid transparent;
+    }
+    .btn-primary{
+      background:linear-gradient(135deg, var(--brand), var(--brand2));
+      color:#fff;
+    }
+    .btn-dark{
+      background:rgba(255,255,255,.05);
+      border-color:var(--line);
+    }
+    .side{padding:20px}
+    .info{
+      display:grid; gap:12px;
+    }
+    .info-box{
+      padding:16px;
+      border-radius:18px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.03);
+    }
+    .info-box strong{display:block; margin-bottom:4px; font-size:17px}
+    .info-box span{color:var(--muted); font-size:14px}
+    section{padding:22px 0}
+    .section-card{padding:24px}
+    .section-card h3{
+      margin:0 0 12px;
+      font-size:28px;
+    }
+    .lead{margin:0 0 18px; color:var(--muted)}
+    .services{
+      display:grid;
+      grid-template-columns:repeat(3, 1fr);
+      gap:16px;
+    }
+    .service{
+      padding:18px;
+      border-radius:18px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.04);
+    }
+    .service h4{margin:0 0 10px; font-size:20px}
+    .service ul{margin:0; padding-right:18px; color:var(--muted)}
+    .service li{margin:6px 0}
+    .grid2{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:16px;
+    }
+    .box{
+      padding:18px;
+      border-radius:18px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.04);
+    }
+    .box h4{margin:0 0 10px; font-size:20px}
+    .box p{margin:0; color:var(--muted)}
+    .links{
+      display:flex; flex-wrap:wrap; gap:12px;
+      margin-top:16px;
+    }
+    .social{
+      display:inline-flex; justify-content:center; align-items:center;
+      padding:12px 16px;
+      border-radius:14px;
+      font-weight:700;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.04);
+    }
+    .whatsapp{background:#25D366; color:#0b1f12; border-color:transparent}
+    .instagram{background:linear-gradient(135deg, #f58529, #dd2a7b, #8134af); color:#fff; border-color:transparent}
+    .facebook{background:#1877F2; color:#fff; border-color:transparent}
+    .qr{
+      display:grid;
+      grid-template-columns:1fr 280px;
+      gap:18px;
+      align-items:center;
+    }
+    .qr-note{color:var(--muted)}
+    .qrframe{
+      background:#fff;
+      border-radius:20px;
+      padding:14px;
+      text-align:center;
+    }
+    .qrframe img{
+      max-width:100%;
+      height:auto;
+      border-radius:14px;
+      display:block;
+      margin:0 auto;
+    }
+    .qrframe .caption{
+      margin-top:10px;
+      font-weight:700;
+      color:#333;
+    }
+    footer{
+      margin-top:20px;
+      padding:22px 0 34px;
+      border-top:1px solid var(--line);
+      color:var(--muted);
+    }
+    .footer-row{
+      display:flex; flex-wrap:wrap; gap:12px;
+      justify-content:space-between; align-items:center;
+    }
+    @media (max-width: 900px){
+      .hero-grid, .services, .grid2, .qr{grid-template-columns:1fr}
+      h2{font-size:34px}
+      .nav{flex-direction:column; align-items:flex-start}
+      .menu{justify-content:flex-start}
+    }
+    @media (max-width: 520px){
+      .hero-main, .section-card, .side{padding:18px}
+      h2{font-size:30px}
+      .btn, .social{width:100%}
+      .cta, .links{display:grid}
+    }
+  </style>
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="wrap">
+      <span class="pill">📍 Kouba, Alger</span>
+      <span class="pill">☎ 0792 197 104</span>
+      <span class="pill">💬 0551 025 000</span>
+      <span class="pill">Instagram: @HAMIAPHONE_</span>
+    </div>
+  </div>
+
+  <header>
+    <div class="wrap nav">
+      <div class="brand">
+        <div class="logo">H</div>
+        <div>
+          <h1>Hamiaphone</h1>
+          <p>Réparation & Accessoires Téléphones</p>
+        </div>
+      </div>
+      <nav class="menu">
+        <a href="#services">Services</a>
+        <a href="#adresses">Adresses</a>
+        <a href="#contact">Contact</a>
+        <a href="#qr">QR Instagram</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="hero">
+      <div class="hero-grid">
+        <div class="card hero-main">
+          <div class="tag">Service rapide • Professionnel • Simple</div>
+          <h2>Réparation de téléphones et vente d’<span>accessoires</span> à Kouba, Alger.</h2>
+          <p>
+            Hamiaphone propose un service clair et moderne : réparation, accessoires, contact direct sur WhatsApp
+            et présence sur Instagram et Facebook.
+          </p>
+          <div class="cta">
+            <a class="btn btn-primary" href="https://wa.me/213551025000" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+            <a class="btn btn-dark" href="https://instagram.com/hamiaphone_" target="_blank" rel="noopener noreferrer">Instagram</a>
+            <a class="btn btn-dark" href="https://facebook.com/phone.hamia/" target="_blank" rel="noopener noreferrer">Facebook</a>
+          </div>
+        </div>
+
+        <aside class="card side">
+          <div class="info">
+            <div class="info-box">
+              <strong>Adresse 1</strong>
+              <span>116 avenue des Freres Abdeslam Kouba Alger</span>
+            </div>
+            <div class="info-box">
+              <strong>Adresse 2</strong>
+              <span>01 Rue Nacer Agoulmine Kouba Alger</span>
+            </div>
+            <div class="info-box">
+              <strong>Téléphones</strong>
+              <span>0792 197 104 / 0551 025 000</span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="card section-card">
+        <h3>Services</h3>
+        <p class="lead">Une présentation simple et propre pour rassurer le client.</p>
+        <div class="services">
+          <div class="service">
+            <h4>Réparation</h4>
+            <ul>
+              <li>Changement d’écran</li>
+              <li>Changement de batterie</li>
+              <li>Diagnostic des pannes</li>
+              <li>Réparation selon le modèle</li>
+            </ul>
+          </div>
+          <div class="service">
+            <h4>Accessoires</h4>
+            <ul>
+              <li>Chargeurs et câbles</li>
+              <li>Coques et protections</li>
+              <li>Écouteurs et petits accessoires</li>
+              <li>Produits disponibles sur place</li>
+            </ul>
+          </div>
+          <div class="service">
+            <h4>Communication</h4>
+            <ul>
+              <li>Contact WhatsApp direct</li>
+              <li>Suivi sur Instagram</li>
+              <li>Page Facebook</li>
+              <li>QR code de l’Instagram</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="adresses">
+      <div class="card section-card">
+        <h3>Adresses</h3>
+        <div class="grid2">
+          <div class="box">
+            <h4>Adresse 1</h4>
+            <p>116 avenue des Freres Abdeslam Kouba Alger</p>
+          </div>
+          <div class="box">
+            <h4>Adresse 2</h4>
+            <p>01 Rue Nacer Agoulmine Kouba Alger</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="card section-card">
+        <h3>Contact</h3>
+        <p class="lead">Ajoutez des boutons visibles pour faciliter le contact immédiat.</p>
+        <div class="links">
+          <a class="social whatsapp" href="https://wa.me/213551025000" target="_blank" rel="noopener noreferrer">WhatsApp: 0551 025 000</a>
+          <a class="social instagram" href="https://instagram.com/hamiaphone_" target="_blank" rel="noopener noreferrer">Instagram</a>
+          <a class="social facebook" href="https://facebook.com/phone.hamia/" target="_blank" rel="noopener noreferrer">Facebook</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="qr">
+      <div class="card section-card">
+        <h3>QR Instagram</h3>
+        <div class="qr">
+          <div>
+            <p class="qr-note">
+              Le QR code affiché ici permet d’ouvrir rapidement le compte Instagram <strong>@HAMIAPHONE_</strong>.
+              Il peut être placé dans la section contact, dans le pied de page, ou en haut de la page.
+            </p>
+          </div>
+          <div class="qrframe">
+            <img src="IMG_20260523_100610.jpg" alt="QR Instagram Hamiaphone">
+            <div class="caption">@HAMIAPHONE_</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-row">
+      <div>© 2026 Hamiaphone</div>
+      <div>Réparation & Accessoires Téléphones — Kouba, Alger</div>
+    </div>
+  </footer>
+
+</body>
+</html>
